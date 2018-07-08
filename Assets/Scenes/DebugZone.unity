@@ -10541,6 +10541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Death_Crash: {fileID: 8300000, guid: c35764c26c78baf4d89960f665dbb450, type: 3}
+  play: 0
 --- !u!1 &795801447
 GameObject:
   m_ObjectHideFlags: 0
@@ -24202,7 +24203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Vie: 3
   Player: {fileID: 805294263}
-  Dead: 0
+  Dead: 1
 --- !u!114 &805294270
 MonoBehaviour:
   m_ObjectHideFlags: 0

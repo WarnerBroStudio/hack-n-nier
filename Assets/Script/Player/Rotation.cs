@@ -9,14 +9,14 @@ public class Rotation : MonoBehaviour {
 	void Start () {
 		Cursor.visible = false;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButton("Rotation X+")) {
-			transform.Rotate(0,0,-force);
+		if (Input.GetButton ("Rotation X+")) {
+			transform.Rotate (0, 0, -force);
 		}
-		if (Input.GetButton("Rotation X-")) {
-			transform.Rotate(0,0,force);
+		if (Input.GetButton ("Rotation X-")) {
+			transform.Rotate (0, 0, force);
 		}
 	}
 }
