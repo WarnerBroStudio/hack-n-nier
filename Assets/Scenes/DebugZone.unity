@@ -24190,6 +24190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0.025
   y: 0.025
+  force: 1
 --- !u!114 &805294269
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,28 +5,28 @@ using UnityEngine;
 public class Movement : MonoBehaviour {
   public float x;
   public float y;
+  public float force;
 
   void Start () {
 
   }
 
   void Update () {
-    if (Input.GetButton ("Avancer")) {
+    if (Input.GetButton ("up")) {
       transform.Translate (new Vector2 (0, y));
     }
 
-    if (Input.GetButton ("Reculer")) {
+    if (Input.GetButton ("down")) {
       transform.Translate (new Vector2 (0, -y));
     }
 
-    if (Input.GetButton ("Droite")) {
-      transform.Translate (new Vector2 (x, 0));
+    if (Input.GetButton ("right")) {
+      transform.Rotate (0, 0, -force);
     }
 
-    if (Input.GetButton ("Gauche")) {
-      transform.Translate (new Vector2 (-x, 0));
+    if (Input.GetButton ("left")) {
+      transform.Rotate (0, 0, force);
     }
-
-    if (Input.GetButton ("Fire")) {}
+    if (Input.GetButton ("fire")) { }
   }
 }

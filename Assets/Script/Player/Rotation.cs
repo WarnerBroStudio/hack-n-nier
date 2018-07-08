@@ -12,11 +12,11 @@ public class Rotation : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButton ("Rotation X+")) {
-			transform.Rotate (0, 0, -force);
-		}
-		if (Input.GetButton ("Rotation X-")) {
-			transform.Rotate (0, 0, force);
-		}
+		// if (Input.GetButton ("Rotation X+")) {
+		// 	transform.Rotate (0, 0, -force);
+		// }
+		// if (Input.GetButton ("Rotation X-")) {
+		// 	transform.Rotate (0, 0, force);
+		// }
 	}
 }
