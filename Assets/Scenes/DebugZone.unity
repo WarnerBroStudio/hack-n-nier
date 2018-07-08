@@ -10389,7 +10389,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c35764c26c78baf4d89960f665dbb450, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -10540,8 +10540,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48df7376baaab924c842204f79c5cc3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Death_Crash: {fileID: 8300000, guid: c35764c26c78baf4d89960f665dbb450, type: 3}
-  play: 0
+  audio: {fileID: 0}
+  fxAlreadyLaunch: 0
 --- !u!1 &795801447
 GameObject:
   m_ObjectHideFlags: 0

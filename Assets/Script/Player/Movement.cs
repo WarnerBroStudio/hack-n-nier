@@ -27,6 +27,7 @@ public class Movement : MonoBehaviour {
     if (Input.GetButton ("left")) {
       transform.Rotate (0, 0, force);
     }
+
     if (Input.GetButton ("fire")) { }
   }
 }

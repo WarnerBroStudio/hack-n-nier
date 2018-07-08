@@ -3,18 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Death : MonoBehaviour {
-  public AudioClip Death_Crash;
- 
+  public AudioSource audio;
+  public bool fxAlreadyLaunch = false;
 
-  // Use this for initialization
-  void Start () { }
+  void Start () {
+    audio = GetComponent<AudioSource> ();
+  }
 
-  // Update is called once per frame
   void Update () {
-    
-      if (GameObject.Find ("Player") != null) { } else {
-        AudioSource audio = GetComponent<AudioSource> ();
-        audio.PlayOneShot (Death_Crash, 0.7F);
-      }
+    if (GameObject.Find ("Player") == null && !fxAlreadyLaunch) {
+      fxAlreadyLaunch = true;
+      audio.Play ();
     }
   }
+}

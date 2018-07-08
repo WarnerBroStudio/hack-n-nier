@@ -9,17 +9,15 @@ public class Menu : MonoBehaviour {
   public bool change;
   public int currentItem;
   public Scene Level;
-  // Use this for initialization
+
   void Start () {
     currentItem = 0;
     updateSelectedItem ();
   }
 
-  // Update is called once per frame
   void Update () {
     if (Input.GetKeyDown ("z") || Input.GetKeyDown ("up")) {
       if (currentItem > 0) {
-
         currentItem -= 1;
         updateSelectedItem ();
       }
@@ -42,14 +40,6 @@ public class Menu : MonoBehaviour {
         default:
           break;
       }
-
-      // if (barA == true) {
-      //   print ("play");
-      //   
-      // }
-      // if (barB == true) {
-      //   print ("quit");
-      // }
     }
   }
 

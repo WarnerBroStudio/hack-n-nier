@@ -6,11 +6,9 @@ using UnityEngine.Playables;
 public class Life : MonoBehaviour {
   public int Vie;
   public GameObject Player;
-  public bool Dead;
+  public bool Dead = false;
 
-  void Start () {
-    Dead = false;
-  }
+  void Start () { }
 
   void Update () {
     if (Vie == 0) {
@@ -21,6 +19,5 @@ public class Life : MonoBehaviour {
     if (Input.GetKeyDown ("space")) {
       Vie--;
     }
-
   }
 }
