@@ -8,7 +8,7 @@ public class Movement : MonoBehaviour {
   public float force;
 
   void Start () {
-
+    Cursor.visible = false;
   }
 
   void Update () {
