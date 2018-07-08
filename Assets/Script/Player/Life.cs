@@ -15,9 +15,7 @@ public class Life : MonoBehaviour {
   void Update () {
     if (Vie == 0) {
       Dead = true;
-      if (Dead == true) {
-        Destroy (Player);
-      }
+      Destroy (Player);
     }
 
     if (Input.GetKeyDown ("space")) {
