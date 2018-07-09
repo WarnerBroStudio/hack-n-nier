@@ -15,9 +15,5 @@ public class Life : MonoBehaviour {
       Dead = true;
       Destroy (Player);
     }
-
-    if (Input.GetKeyDown ("space")) {
-      Vie--;
-    }
   }
 }

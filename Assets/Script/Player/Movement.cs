@@ -6,6 +6,9 @@ public class Movement : MonoBehaviour {
   public float x;
   public float y;
   public float force;
+  public GameObject player;
+  public GameObject shoot;
+  public Transform playerTransform;
 
   void Start () {
     Cursor.visible = false;
@@ -28,6 +31,8 @@ public class Movement : MonoBehaviour {
       transform.Rotate (0, 0, force);
     }
 
-    if (Input.GetButton ("fire")) { }
+    if (Input.GetButton ("fire")) {
+      Instantiate (shoot, player.transform.position, player.transform.rotation );
+    }
   }
 }
