@@ -32,7 +32,9 @@ public class Movement : MonoBehaviour {
     }
 
     if (Input.GetButton ("fire")) {
-      Instantiate (shoot, player.transform.position, player.transform.rotation );
+      GameObject newShoot = Instantiate (shoot, new Vector2(0,0), player.transform.rotation);
+      newShoot.transform.position = new Vector2(player.transform.position.x, player.transform.position.y);
+      newShoot.transform.Translate(new Vector2(0, 0.7f));
     }
   }
 }

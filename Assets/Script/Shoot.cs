@@ -14,6 +14,14 @@ public class Shoot : MonoBehaviour {
   }
 
   void Update () {
-    transform.Translate (new Vector2 (0, speed));
+    if (gameObject.name.Contains ("(Clone)")) {
+      transform.Translate (new Vector2 (0, speed));
+    }
+  }
+  void OnCollisionEnter (Collision col) {
+    Debug.Log (col.gameObject.name);
+    if (col.gameObject.name == "prop_powerCube") {
+      Destroy (col.gameObject);
+    }
   }
 }
