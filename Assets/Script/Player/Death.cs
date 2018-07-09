@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Death : MonoBehaviour {
   public AudioSource audio;
+  public GameObject UI;
   public bool fxAlreadyLaunch = false;
 
   void Start () {
@@ -14,6 +15,8 @@ public class Death : MonoBehaviour {
     if (GameObject.Find ("Player") == null && !fxAlreadyLaunch) {
       fxAlreadyLaunch = true;
       audio.Play ();
+
+      gameObject.SetActive(UI);
     }
   }
 }
