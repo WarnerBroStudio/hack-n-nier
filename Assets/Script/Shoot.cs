@@ -15,13 +15,10 @@ public class Shoot : MonoBehaviour {
 
   void Update () {
     if (gameObject.name.Contains ("(Clone)")) {
-      transform.Translate (new Vector2 (0, speed));
+      transform.Translate (new Vector2 (0, 0.1f));
     }
   }
-  void OnCollisionEnter (Collision col) {
-    Debug.Log (col.gameObject.name);
-    if (col.gameObject.name == "prop_powerCube") {
-      Destroy (col.gameObject);
-    }
+  void OnCollisionEnter2D (Collision2D col) {
+    Destroy (this.GameObject);
   }
 }
