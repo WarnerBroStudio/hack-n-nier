@@ -19,6 +19,8 @@ public class Shoot : MonoBehaviour {
     }
   }
   void OnCollisionEnter2D (Collision2D col) {
-    Destroy (this.GameObject);
+    if (gameObject.name.Contains ("(Clone)")) {
+      Destroy (gameObject);
+    }
   }
 }
