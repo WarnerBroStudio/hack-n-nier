@@ -7,9 +7,10 @@ public class Spawner : MonoBehaviour {
 
 	private float time;
 	public GameObject[] enemmies;
+	public Coroutine coroutine;
 	void Start () {
 		this.time = 1f;
-		StartCoroutine (this.StartSpawner ());
+		this.coroutine = StartCoroutine (this.StartSpawner ());
 	}
 
 	public IEnumerator StartSpawner () {
