@@ -27,12 +27,4 @@ public class Enemy1 : MonoBehaviour {
 	public float Inflict (float damage) {
 		return this.health -= damage;
 	}
-
-	public IEnumerator StartSpawner (float time = 10.0f) {
-		while (true) {
-			Spawn ();
-			yield return new WaitForSeconds (1);
-		}
-	}
-
 }

@@ -8,9 +8,6 @@ public class Movement : MonoBehaviour {
   public GameObject enemy1;
   void Start () {
     Cursor.visible = false;
-    // StartCoroutine(enemy1.GetComponent<Enemy1> ().StartSpawner());
-    enemy1.GetComponent<Enemy1> ().Spawn();
-
   }
 
   void Update () {
