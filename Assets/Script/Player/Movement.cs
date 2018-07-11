@@ -20,7 +20,7 @@ public class Movement : MonoBehaviour {
     }
 
     if (Input.GetButton ("right")) {
-      transform.Rotate (0, 0, 2.0f);
+      transform.Rotate (0, 0, -2.0f);
     }
 
     if (Input.GetButton ("left")) {
