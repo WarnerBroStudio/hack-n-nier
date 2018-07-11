@@ -15,7 +15,7 @@ public class Death : MonoBehaviour {
     if (GameObject.Find ("Player") == null && !fxAlreadyLaunch) {
       fxAlreadyLaunch = true;
       audio.Play ();
-      UI.SetActive(true);
+      gameObject.SetActive(UI);
     }
 
   }
