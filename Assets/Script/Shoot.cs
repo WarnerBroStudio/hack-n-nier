@@ -5,23 +5,28 @@ using UnityEngine;
 public class Shoot : MonoBehaviour {
   public GameObject player;
   public float speed;
+  public float damage;
   public bool bouge = false;
 
   void Start () {
-    speed = 10.0f;
-    if (gameObject.name.Contains ("(Clone)")) {
-      Destroy (gameObject, 1);
+    this.speed = 10.0f;
+    this.damage = 2.0f;
+    if (this.gameObject.name.Contains ("(Clone)")) {
+      Destroy (this.gameObject, 1);
     }
   }
 
   void Update () {
-    if (gameObject.name.Contains ("(Clone)")) {
-      transform.Translate (Vector3.up * Time.deltaTime * speed);
+    if (this.gameObject.name.Contains ("(Clone)")) {
+      transform.Translate (Vector3.up * Time.deltaTime * this.speed);
     }
   }
   void OnCollisionEnter2D (Collision2D col) {
-    if (gameObject.name.Contains ("(Clone)")) {
-      Destroy (gameObject);
+    if (this.gameObject.name.Contains ("(Clone)")) {
+      if (col.gameObject.GetComponent<Enemy1> () != null) {
+        col.gameObject.GetComponent<Enemy1> ().Inflict (this.damage);
+      }
+      Destroy (this.gameObject);
     }
   }
 }

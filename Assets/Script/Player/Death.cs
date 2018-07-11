@@ -6,9 +6,10 @@ public class Death : MonoBehaviour {
   public AudioSource audio;
   public GameObject UI;
   public bool fxAlreadyLaunch = false;
-
+  private Spawner spawner;
   void Start () {
     audio = GetComponent<AudioSource> ();
+    this.spawner = GetComponent<Spawner> ();
   }
 
   void Update () {
@@ -16,7 +17,7 @@ public class Death : MonoBehaviour {
       fxAlreadyLaunch = true;
       audio.Play ();
       UI.SetActive(true);
+      StopCoroutine(this.spawner.coroutine);
     }
-
   }
 }
