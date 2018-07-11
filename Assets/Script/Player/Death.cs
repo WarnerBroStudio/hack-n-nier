@@ -17,6 +17,5 @@ public class Death : MonoBehaviour {
       audio.Play ();
       gameObject.SetActive(UI);
     }
-
   }
 }
