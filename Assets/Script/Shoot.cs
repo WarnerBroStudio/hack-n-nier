@@ -21,6 +21,7 @@ public class Shoot : MonoBehaviour {
       transform.Translate (Vector3.up * Time.deltaTime * this.speed);
     }
   }
+
   void OnCollisionEnter2D (Collision2D col) {
     if (this.gameObject.name.Contains ("(Clone)")) {
       if (col.gameObject.GetComponent<Enemy1> () != null) {

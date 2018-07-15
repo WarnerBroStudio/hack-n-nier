@@ -4,16 +4,26 @@ using UnityEngine;
 using UnityEngine.Playables;
 
 public class Life : MonoBehaviour {
-  public int Vie;
-  public GameObject Player;
-  public bool Dead = false;
+  public int health;
+  public bool dead = false;
+  public GameObject UI;
+  public bool fxAlreadyLaunch = false;
+  public AudioSource audio;
+  public Spawner spawner;
 
-  void Start () { }
-
-  void Update () {
-    if (Vie == 0) {
-      Dead = true;
-      Destroy (Player);
+  public void Inflict () {
+    this.health--;
+    if (this.health <= 0) {
+      this.dead = true;
+      this.Kill ();
     }
+  }
+
+  public void Kill () {
+    this.fxAlreadyLaunch = true;
+    this.audio.Play ();
+    UI.SetActive (true);
+    StopCoroutine (this.spawner.coroutine);
+    Destroy (this.gameObject);
   }
 }

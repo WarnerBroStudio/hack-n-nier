@@ -4,26 +4,25 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Timer : MonoBehaviour {
-public byte Time_for_level;
-public GameObject Player;
-public Text Text_Time;
-	// Use this for initialization
-	void Start () {
-		InvokeRepeating("Decrease",1f, 1f);
-		Text_Time = GetComponent<Text>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		if (Time_for_level == 0){
-			Destroy (Player);
-		}
-		 if(GameObject.Find("Player")){
-    	 Text_Time.text = "Time : " + Time_for_level;
-		}
-	}
+  public int timeForLevel;
+  public Life player;
+  public Text textTime;
+  public Coroutine coroutine;
 
-	void Decrease () {
-		Time_for_level--; 
-	}
+  void Start () {
+    this.timeForLevel = 10;
+    this.textTime = GetComponent<Text> ();
+    StartCoroutine (this.StartSpawner (1));
+  }
+
+  public IEnumerator StartSpawner (int delay) {
+    this.timeForLevel--;
+    this.textTime.text = "Time : " + this.timeForLevel;
+    if (this.timeForLevel == 0) {
+      this.player.Kill ();
+    } else {
+      yield return new WaitForSeconds (1);
+      StartCoroutine (this.StartSpawner (1));
+    }
+  }
 }
